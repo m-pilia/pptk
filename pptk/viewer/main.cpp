@@ -8,6 +8,7 @@ int main(int argc, char* argv[]) {
     qDebug() << "usage: viewer <port number>";
     return 1;
   }
+  QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
   QApplication a(argc, argv);
   unsigned short clientPort = (unsigned short)atoi(argv[1]);
   Viewer viewer(clientPort);
